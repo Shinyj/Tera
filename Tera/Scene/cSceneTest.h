@@ -4,6 +4,7 @@
 class cCharaPopori;
 class cDummyObj;
 class cSprite;
+class cMonster01;
 
 class cSceneTest : public cGameNode
 {
@@ -13,6 +14,8 @@ private :
 	int					m_nBGBlackAlpha;
 	cCharaPopori*		m_pPopori;
 	cDummyObj*			m_pDummy;
+
+	cMonster01*			m_pMonster01;
 
 public:
 	cSceneTest();

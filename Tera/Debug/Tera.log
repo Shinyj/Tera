@@ -1,9 +1,1 @@
-﻿  cLoading.cpp
-c:\users\shin\documents\visual studio 2015\projects\tera\tera\loading\cloading.cpp(83): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\shin\documents\visual studio 2015\projects\tera\tera\loading\cloading.cpp(98): warning C4244: '인수': 'UINT'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\shin\documents\visual studio 2015\projects\tera\tera\loading\cloading.cpp(145): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\shin\documents\visual studio 2015\projects\tera\tera\loading\cloading.cpp(179): warning C4244: '인수': 'unsigned int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\shin\documents\visual studio 2015\projects\tera\tera\loading\cloading.cpp(179): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\shin\documents\visual studio 2015\projects\tera\tera\loading\cloading.cpp(152): warning C4101: 'img' :참조되지 않은 지역 변수입니다.
-  Tera.vcxproj -> C:\Users\shin\documents\visual studio 2015\Projects\Tera\Debug\Tera.exe
-  Tera.vcxproj -> C:\Users\shin\documents\visual studio 2015\Projects\Tera\Debug\Tera.pdb (Full PDB)
+﻿  Tera.vcxproj -> C:\Users\user\source\repos\Tera\Debug\Tera.exe
