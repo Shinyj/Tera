@@ -14,6 +14,9 @@ public:
 
 	float			m_fCosVal; // 카메라 기준 각도
 
+	//이것도 페치해보시지~ 흥~
+
+	float a;
 
 	D3DXMATRIX		m_matAnimWorld;
 	D3DXVECTOR3		m_vCurAnimPos;
