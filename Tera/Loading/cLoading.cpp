@@ -77,8 +77,8 @@ void cLoading::Setup(const char * backTexture)
 	//로딩바 초기화
 	_loadingBar = new cProgressBar;
 	_loadingBar->Setup(
-		"Textrue/SceneTexture/LoadingBar.png",
-		"Textrue/SceneTexture/BGLoadingBar.png",
+		"Texture/SceneTexture/LoadingBar.png",
+		"Texture/SceneTexture/BGLoadingBar.png",
 		WINSIZEX / 2 - WINSIZEX * 3.0f / 8.0f, WINSIZEY - 100, WINSIZEX * 3.0f / 4.0f, 28
 	);
 	//

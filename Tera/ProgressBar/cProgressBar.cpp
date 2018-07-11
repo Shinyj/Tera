@@ -23,10 +23,10 @@ void cProgressBar::Setup(char * frontImage, char * backImage, float x, float y, 
 	_rcProgress = RectMake(x, y, width, height);
 	
 	// 체력바 이미지 초기화
-	_progressBarFront = TEXTUREMANAGER->GetSprite("Texture/SceneTexture/LoadingBar.png");
+	_progressBarFront = TEXTUREMANAGER->GetSprite(frontImage);
 	//_progressBarFront->Init(frontImage, x, y, width, height, true, RGB(255, 0, 255));
 	
-	_progressBarBack = TEXTUREMANAGER->GetSprite("Texture/SceneTexture/BGLoadingBar.png");
+	_progressBarBack = TEXTUREMANAGER->GetSprite(backImage);
 	//_progressBarBack->Init(backImage, x, y, width, height, true, RGB(255, 0, 255));
 
 	// 가로 길이 초기화

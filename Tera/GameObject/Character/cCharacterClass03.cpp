@@ -148,10 +148,13 @@ void cCharacterClass03::Update()
 	// 그냥 여기 클래스에서 이동도 처리하기로 했음 
 	//cCharacter::Update();
 	Move();
+
+	cCharacter::Update();
 }
 
 void cCharacterClass03::Render()
 {
+	cCharacter::Render();
 }
 
 void cCharacterClass03::SetAnimWorld()

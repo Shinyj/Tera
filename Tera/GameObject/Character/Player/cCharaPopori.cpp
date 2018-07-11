@@ -167,6 +167,8 @@ void cCharaPopori::Render()
 
 	cGameObject::Render();
 
+	cCharacterClass03::Render();
+
 	char szTemp[1024];
 	sprintf_s(szTemp, 1024, "angle : %f", m_fRotY);
 	RECT rc;
