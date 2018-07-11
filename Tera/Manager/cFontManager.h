@@ -8,7 +8,8 @@ public:
 	enum eFontType // UI 의 위치나 형태에 따라 사용하는 폰트가 다름
 	{
 		FT_DEFAULT,
-		FT_QUEST
+		FT_QUEST,
+		TF_UI_MESSAGE
 	};
 
 	SINGLETONE(cFontManager);

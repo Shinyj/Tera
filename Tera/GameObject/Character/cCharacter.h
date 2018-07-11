@@ -16,8 +16,8 @@ public:
 	//iMap*				m_pMap;
 
 	float				m_fCosVal; // 카메라 기준 각도
-	
-	
+
+
 	D3DXMATRIX			m_matAnimWorld;
 	D3DXVECTOR3			m_vCurAnimPos;
 	D3DXVECTOR3			m_vBeforeAnimPos;
@@ -35,7 +35,7 @@ public:
 	cProgressBar*		m_pMpBar;
 	cSprite*			m_BackBar;
 
-public :
+public:
 	SYNTHESIZE(D3DXVECTOR3, m_vPosition, Position);
 
 public:
@@ -45,5 +45,10 @@ public:
 	void Setup();
 	void Update();
 	void Render();
+
+
+	void SetUpStateBar();
+	void UpdateUpStateBar();
+	void RenderUpStateBar();
 };
 

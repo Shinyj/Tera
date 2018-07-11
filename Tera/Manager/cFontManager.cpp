@@ -40,6 +40,16 @@ LPD3DXFONT cFontManager::GetFont(eFontType type)
 		fd.PitchAndFamily = FF_DONTCARE;
 		//AddFontResource("파일경로");
 	}
+	else if (type == TF_UI_MESSAGE)
+	{
+		fd.Height = 15;
+		fd.Width = 15;
+		fd.Weight = FW_BOLD;
+		fd.Italic = false;
+		fd.CharSet = DEFAULT_CHARSET;
+		fd.OutputPrecision = OUT_DEFAULT_PRECIS;
+		fd.PitchAndFamily = FF_DONTCARE;
+	}
 
 	D3DXCreateFontIndirect(g_pD3DDevice, &fd, &m_mapFont[type]);
 
