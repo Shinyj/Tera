@@ -12,13 +12,19 @@ cItemBase::cItemBase()
 	, m_pBody(NULL)
 	, m_nIndex(0)
 	, m_fTime(0.0f)
+	, m_pSlashEffectTexture(NULL)
 	, m_vOnPos(0, 0, 0)
 	, m_vDownPos(0, 0, 0)
 {
 	D3DXMatrixIdentity(&m_matWorld);
 
+	ST_PC_VERTEX v;
+	v.p = D3DXVECTOR3(0, 0, 0);
+	D3DCOLOR color(0x880000ff);
+	v.c = color;
+
 	for (int i = 0; i < 10; i++)
-		ZeroMemory(&m_arrPos[i], sizeof(ST_PNT_VERTEX));
+		m_arrPos[i] = v;
 
 }
 
@@ -38,7 +44,7 @@ void cItemBase::Update()
 	m_pBoundingBox->SetWorld(m_matWorld);
 
 	m_fTime += TIMEMANAGER->GetEllapsedTime();
-	if (m_fTime > 0.005)
+	if (m_fTime > 0.0005)
 	{
 		m_fTime = 0.0f;
 
@@ -70,14 +76,16 @@ void cItemBase::Render()
 
 	if (m_vecVertex.size() != 0)
 	{
+		//g_pD3DDevice->SetTexture(0, m_pSlashEffectTexture);
 		g_pD3DDevice->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
-		g_pD3DDevice->SetFVF(ST_PNT_VERTEX::FVF);
+		g_pD3DDevice->SetFVF(ST_PC_VERTEX::FVF);
 		g_pD3DDevice->DrawPrimitiveUP(D3DPT_TRIANGLELIST,
 			m_vecVertex.size() / 3,
 			&m_vecVertex[0],
-			sizeof(ST_PNT_VERTEX));
+			sizeof(ST_PC_VERTEX));
 
 		g_pD3DDevice->SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW);
+		//g_pD3DDevice->SetTexture(0, NULL);
 	}
 
 	g_pD3DDevice->SetTransform(D3DTS_WORLD, &m_matWorld);

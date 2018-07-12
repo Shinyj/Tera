@@ -13,14 +13,17 @@ protected :
 	char *			m_sName;
 	cXMesh*			m_pBody;
 
-	ST_PNT_VERTEX		m_arrPos[50];
+	ST_PC_VERTEX		m_arrPos[50];
 	int					m_nIndex;
 	float				m_fTime;
+
+
+	LPDIRECT3DTEXTURE9	m_pSlashEffectTexture;
 
 	D3DXVECTOR3			m_vOnPos;
 	D3DXVECTOR3			m_vDownPos;
 
-	vector<ST_PNT_VERTEX>	m_vecVertex;
+	vector<ST_PC_VERTEX>	m_vecVertex;
 
 public:
 	cItemBase();
