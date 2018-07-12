@@ -95,13 +95,14 @@ public:
 
 	void ProcessCombo();
 	void ProcessDamaged();
+	void ProcessGaiaCrash();
 
 	void ProcessBigDamaged();
 	void ProcessDie();
 
 	void Move();
 
-	void Damaged();
+	void Damaged(float damage);
 	void BigDamaged();
 	void Die();
 

@@ -22,13 +22,13 @@
     <ProjectGuid>{0C1A8ED4-9DFE-473C-AECC-1F530935F9D7}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Tera</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -154,8 +154,10 @@
     <ClInclude Include="BoundingBox\cBoundingBox.h" />
     <ClInclude Include="cCamera.h" />
     <ClInclude Include="BoundingBox\Cube\cCube.h" />
+    <ClInclude Include="cTestMap.h" />
     <ClInclude Include="GameObject\Monster\cMonster.h" />
     <ClInclude Include="GameObject\Monster\cMonster01.h" />
+    <ClInclude Include="iMap.h" />
     <ClInclude Include="ProgressBar\cPlayerHpBar.h" />
     <ClInclude Include="Manager\cStaticMeshManager.h" />
     <ClInclude Include="Scene\05_BossScene\cSceneBossLoading.h" />
@@ -214,8 +216,10 @@
     <ClCompile Include="BoundingBox\cBoundingBox.cpp" />
     <ClCompile Include="cCamera.cpp" />
     <ClCompile Include="BoundingBox\Cube\cCube.cpp" />
+    <ClCompile Include="cTestMap.cpp" />
     <ClCompile Include="GameObject\Monster\cMonster.cpp" />
     <ClCompile Include="GameObject\Monster\cMonster01.cpp" />
+    <ClCompile Include="iMap.cpp" />
     <ClCompile Include="ProgressBar\cPlayerHpBar.cpp" />
     <ClCompile Include="Manager\cStaticMeshManager.cpp" />
     <ClCompile Include="Scene\05_BossScene\cSceneBossLoading.cpp" />

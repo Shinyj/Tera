@@ -40,11 +40,21 @@ LPD3DXFONT cFontManager::GetFont(eFontType type)
 		fd.PitchAndFamily = FF_DONTCARE;
 		//AddFontResource("파일경로");
 	}
-	else if (type == TF_UI_MESSAGE)
+	else if (type == TF_UI_TEXT)
 	{
 		fd.Height = 15;
 		fd.Width = 15;
 		fd.Weight = FW_BOLD;
+		fd.Italic = false;
+		fd.CharSet = DEFAULT_CHARSET;
+		fd.OutputPrecision = OUT_DEFAULT_PRECIS;
+		fd.PitchAndFamily = FF_DONTCARE;
+	}
+	else if (type == TF_UI_NUMBER)
+	{
+		fd.Height = 15;
+		fd.Width = 15;
+		fd.Weight = FW_NORMAL;
 		fd.Italic = false;
 		fd.CharSet = DEFAULT_CHARSET;
 		fd.OutputPrecision = OUT_DEFAULT_PRECIS;

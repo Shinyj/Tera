@@ -9,7 +9,8 @@ public:
 	{
 		FT_DEFAULT,
 		FT_QUEST,
-		TF_UI_MESSAGE
+		TF_UI_TEXT,
+		TF_UI_NUMBER
 	};
 
 	SINGLETONE(cFontManager);

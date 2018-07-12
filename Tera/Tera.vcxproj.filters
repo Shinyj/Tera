@@ -192,6 +192,12 @@
     <ClInclude Include="GameObject\Monster\cMonster01.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="cTestMap.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="iMap.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -357,6 +363,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="GameObject\Monster\cMonster01.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="cTestMap.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="iMap.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

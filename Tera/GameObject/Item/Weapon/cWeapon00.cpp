@@ -30,6 +30,9 @@ void cWeapon00::Setup()
 	m_pBoundingBox->Setup(
 		D3DXVECTOR3(-5,-10,-5),
 		D3DXVECTOR3(5, 50, 5));
+
+	m_vOnPos = D3DXVECTOR3(0, 50, 0);
+	m_vDownPos = D3DXVECTOR3(0, 0, 0);
 }
 
 void cWeapon00::Update()
@@ -39,6 +42,12 @@ void cWeapon00::Update()
 
 void cWeapon00::Rendeer()
 {
+	//g_pD3DDevice->SetFVF(ST_PNT_VERTEX::FVF);
+	//g_pD3DDevice->DrawPrimitiveUP(D3DPT_TRIANGLELIST,
+	//	m_arrPos.size() / 3,
+	//	&m_arrPos[0],
+	//	sizeof(ST_PNT_VERTEX));
+
 	cItemBase::Render();
 	//g_pD3DDevice->SetTransform(D3DTS_WORLD, &m_matWorld);
 	//m_pBody->Render();

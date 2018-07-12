@@ -65,6 +65,8 @@ void cCharaPopori::Setup()
 
 void cCharaPopori::Update()
 {
+	m_pDummyRoot->TransformationMatrix._42 = m_matWorld._42;
+
 	if (KEYMANAGER->IsOnceKeyDown('5'))
 	{
 		int a = 1;
@@ -126,6 +128,8 @@ void cCharaPopori::Update()
 	// 아니면 평소처럼 적용된 월드에서 업데이트
 	if (isUseLocalAnim())
 	{
+		m_matAnimWorld._42 = m_matWorld._42;
+
 		m_pBody->Update(m_matAnimWorld);
 		m_pHand->Update(m_matAnimWorld);
 		m_pLeg->Update(m_matAnimWorld);
@@ -169,19 +173,6 @@ void cCharaPopori::Render()
 
 	cCharacterClass03::Render();
 
-	char szTemp[1024];
-	sprintf_s(szTemp, 1024, "angle : %f", m_fRotY);
-	RECT rc;
-	SetRect(&rc, 0, 200, 200, 300);
-
-	LPD3DXFONT pFont = FONTMANAGER->GetFont(cFontManager::FT_DEFAULT);
-	pFont->DrawTextA(NULL,
-		szTemp,
-		strlen(szTemp),
-		&rc,
-		DT_LEFT | DT_VCENTER,
-		D3DCOLOR_XRGB(255, 255, 0));
-
 }
 
 bool cCharaPopori::isUseLocalAnim()
@@ -196,7 +187,13 @@ bool cCharaPopori::isUseLocalAnim()
 		m_state == CH_STATE_bReactionStart ||
 		m_state == CH_STATE_bReactionStart3 ||
 		m_state == CH_STATE_Death ||
-		m_state == CH_STATE_bReactionLand3
+		m_state == CH_STATE_bReactionLand3 ||
+		m_state == CH_STATE_gaiaCrush01 ||
+		m_state == CH_STATE_gaiaCrush02 ||
+		m_state == CH_STATE_gaiaCrush03 ||
+		m_state == CH_STATE_CuttingSlash ||
+		m_state == CH_STATE_CutHead ||
+		m_state == CH_STATE_StingerBlade
 		)
 		return true;
 

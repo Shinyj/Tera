@@ -2,6 +2,7 @@
 #include "cCharacter.h"
 #include "ProgressBar\cProgressBar.h"
 #include "Sprite\cSprite.h"
+#include "iMap.h"
 
 cCharacter::cCharacter()
 	: m_fRotY(0.0f)
@@ -17,6 +18,7 @@ cCharacter::cCharacter()
 	, m_pHpBar(NULL)
 	, m_pMpBar(NULL)
 	, m_BackBar(NULL)
+	, m_pMap(NULL)
 {
 	D3DXMatrixIdentity(&m_matWorld);
 	D3DXMatrixIdentity(&m_matAnimWorld);
@@ -38,11 +40,20 @@ void cCharacter::Setup()
 void cCharacter::Update()
 {
 	UpdateUpStateBar();
+	PlusMapHeight();
+
+	//m_matWorld._42 = m_vPosition.y;
 }
 
 void cCharacter::Render()
 {
 	RenderUpStateBar();
+}
+
+void cCharacter::PlusMapHeight()
+{
+	if(m_pMap)
+		m_pMap->GetHeight(m_vPosition.x, m_vPosition.y, m_vPosition.z);
 }
 
 void cCharacter::SetUpStateBar()
@@ -89,15 +100,38 @@ void cCharacter::RenderUpStateBar()
 		300 + m_BackBar->textureInfo.Width,
 		26 + 26);
 
-	LPD3DXFONT pFont = FONTMANAGER->GetFont(cFontManager::TF_UI_MESSAGE);
+	LPD3DXFONT pFont = FONTMANAGER->GetFont(cFontManager::TF_UI_NUMBER);
 	pFont->DrawTextA(NULL, szTemp, strlen(szTemp), &rc,
 		DT_LEFT | DT_VCENTER, D3DCOLOR_XRGB(255, 255, 255));
 
-	sprintf_s(szTemp, 1024, "%d / %d", (int)m_fHpCur, (int)m_fHpMax);
+	sprintf_s(szTemp, 1024, "%d / %d", (int)m_fMpCur, (int)m_fMpMax);
 	SetRect(&rc,
 		300,
 		66,
 		300 + m_BackBar->textureInfo.Width,
+		66 + 26);
+
+	pFont->DrawTextA(NULL, szTemp, strlen(szTemp), &rc,
+		DT_LEFT | DT_VCENTER, D3DCOLOR_XRGB(255, 255, 255));
+
+
+	pFont = FONTMANAGER->GetFont(cFontManager::TF_UI_TEXT);
+
+	sprintf_s(szTemp, 1024, "HP", (int)m_fMpCur, (int)m_fMpMax);
+	SetRect(&rc,
+		120,
+		26,
+		350,
+		26 + 26);
+
+	pFont->DrawTextA(NULL, szTemp, strlen(szTemp), &rc,
+		DT_LEFT | DT_VCENTER, D3DCOLOR_XRGB(255, 255, 255));
+
+	sprintf_s(szTemp, 1024, "MP", (int)m_fMpCur, (int)m_fMpMax);
+	SetRect(&rc,
+		120,
+		66,
+		350,
 		66 + 26);
 
 	pFont->DrawTextA(NULL, szTemp, strlen(szTemp), &rc,

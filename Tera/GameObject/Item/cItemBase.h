@@ -13,6 +13,15 @@ protected :
 	char *			m_sName;
 	cXMesh*			m_pBody;
 
+	ST_PNT_VERTEX		m_arrPos[50];
+	int					m_nIndex;
+	float				m_fTime;
+
+	D3DXVECTOR3			m_vOnPos;
+	D3DXVECTOR3			m_vDownPos;
+
+	vector<ST_PNT_VERTEX>	m_vecVertex;
+
 public:
 	cItemBase();
 	virtual~cItemBase();

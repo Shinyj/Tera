@@ -48,7 +48,7 @@ void cCharacterClass03::Setup()
 void cCharacterClass03::Update()
 {
 
-	Damaged();
+	Damaged(5.0f);
 	BigDamaged();
 	Die();
 	// 여기서도 애니메이션의 걸린 시간을 똑같이 진행
@@ -74,6 +74,8 @@ void cCharacterClass03::Update()
 			// 데미지, 사망 처리
 			ProcessDamaged();
 
+			//
+			ProcessGaiaCrash();
 			if (cs == m_state && cs != CH_STATE_Dearhwait)
 			{
 				m_state = CH_STATE_Wait;
@@ -125,6 +127,52 @@ void cCharacterClass03::Update()
 		// 여기는 점프를 만들어야 합니다.
 		m_state = CH_STATE_DwonBlow;
 		m_fCurAnimTime = m_fAnimTime[CH_STATE_DwonBlow];
+		m_fTime = 0.0f;
+		m_bIsDone = false;
+	}
+	else if (KEYMANAGER->IsOnceKeyDown('1'))
+	{
+		// 가이아 크래시
+
+		SetAnimWorld();
+
+		// 여기는 점프를 만들어야 합니다.
+		m_state = CH_STATE_gaiaCrush01;
+		m_fCurAnimTime = m_fAnimTime[CH_STATE_gaiaCrush01];
+		m_fTime = 0.0f;
+		m_bIsDone = false;
+	}
+	else if (KEYMANAGER->IsOnceKeyDown('2'))
+	{
+		// 커팅슬래시
+
+		SetAnimWorld();
+
+		// 여기는 점프를 만들어야 합니다.
+		m_state = CH_STATE_CuttingSlash;
+		m_fCurAnimTime = m_fAnimTime[CH_STATE_CuttingSlash];
+		m_fTime = 0.0f;
+		m_bIsDone = false;
+	}
+	else if (KEYMANAGER->IsOnceKeyDown('3'))
+	{
+		// 컷헤드
+
+		SetAnimWorld();
+
+		// 여기는 점프를 만들어야 합니다.
+		m_state = CH_STATE_CutHead;
+		m_fCurAnimTime = m_fAnimTime[CH_STATE_CutHead];
+		m_fTime = 0.0f;
+		m_bIsDone = false;
+	}
+	else if (KEYMANAGER->IsOnceKeyDown('4'))
+	{
+		SetAnimWorld();
+
+		// 여기는 점프를 만들어야 합니다.
+		m_state = CH_STATE_StingerBlade;
+		m_fCurAnimTime = m_fAnimTime[CH_STATE_StingerBlade];
 		m_fTime = 0.0f;
 		m_bIsDone = false;
 	}
@@ -284,6 +332,26 @@ void cCharacterClass03::ProcessDamaged()
 	}
 }
 
+void cCharacterClass03::ProcessGaiaCrash()
+{
+	if (m_state == CH_STATE_gaiaCrush01)
+	{
+		SetAnimWorld();
+		m_state = CH_STATE_gaiaCrush02;
+		m_fCurAnimTime = m_fAnimTime[CH_STATE_gaiaCrush02];
+		m_bIsDone = false;
+		m_bIsBlend = false;
+	}
+	else if (m_state == CH_STATE_gaiaCrush02)
+	{
+		SetAnimWorld();
+		m_state = CH_STATE_gaiaCrush03;
+		m_fCurAnimTime = m_fAnimTime[CH_STATE_gaiaCrush03];
+		m_bIsDone = false;
+		m_bIsBlend = false;
+	}
+}
+
 void cCharacterClass03::ProcessBigDamaged()
 {
 }
@@ -393,16 +461,38 @@ void cCharacterClass03::Move()
 	m_matWorld = matR * matT;
 }
 
-void cCharacterClass03::Damaged()
+void cCharacterClass03::Damaged(float damage)
 {
+
 	if (KEYMANAGER->IsOnceKeyDown('Q'))
 	{
-		SetAnimWorld();
+		m_fHpCur -= damage;
 
-		m_state = CH_STATE_bReactionStart;
-		m_fCurAnimTime = m_fAnimTime[CH_STATE_bReactionStart];
-		m_bIsDone = false;
-		m_bIsBlend = false;
+		if (damage < m_fHpMax / 10.0f)
+		{
+
+		}
+		else if (damage < m_fHpMax / 6.0f)
+		{
+			SetAnimWorld();
+			m_state = CH_STATE_bReactionStart;
+			m_fCurAnimTime = m_fAnimTime[CH_STATE_bReactionStart];
+			m_bIsDone = false;
+			m_bIsBlend = false;
+		}
+		else
+		{
+			SetAnimWorld();
+			m_state = CH_STATE_bReactionStart3;
+			m_fCurAnimTime = m_fAnimTime[CH_STATE_bReactionStart3];
+			m_bIsDone = false;
+			m_bIsBlend = false;
+		}
+
+		if (m_fHpCur < 0)
+		{
+			Die();
+		}
 	}
 }
 
@@ -423,8 +513,9 @@ void cCharacterClass03::Die()
 {
 	if (KEYMANAGER->IsOnceKeyDown('R'))
 	{
-		SetAnimWorld();
+		m_fHpCur = 0.0f;
 
+		SetAnimWorld();
 		m_state = CH_STATE_Death;
 		m_fCurAnimTime = m_fAnimTime[CH_STATE_Death];
 		m_bIsDone = false;

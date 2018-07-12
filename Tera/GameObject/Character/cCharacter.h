@@ -1,6 +1,7 @@
 #pragma once
 #include "../cGameObject.h"
 
+class iMap;
 class cProgressBar;
 
 
@@ -13,7 +14,7 @@ public:
 
 	float				m_fSpeed;
 
-	//iMap*				m_pMap;
+	SYNTHESIZE(iMap*, m_pMap, Map);
 
 	float				m_fCosVal; // 카메라 기준 각도
 
@@ -46,6 +47,7 @@ public:
 	void Update();
 	void Render();
 
+	void PlusMapHeight();
 
 	void SetUpStateBar();
 	void UpdateUpStateBar();

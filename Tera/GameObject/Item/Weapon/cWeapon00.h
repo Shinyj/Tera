@@ -8,6 +8,8 @@ class cWeapon00 : public cItemBase
 {
 private :
 
+
+
 public:
 	cWeapon00();
 	virtual~cWeapon00();
