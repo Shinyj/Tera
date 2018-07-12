@@ -58,7 +58,7 @@ private:
 
 	float				m_fCosVal;
 
-	//테스트 전용 임시변수
+	//행동패턴 디자인에 쓰인 임시변수
 	D3DXVECTOR3			temp;
 
 public:
@@ -102,5 +102,7 @@ public:
 	void Damaged();
 	void BigDamaged();
 	void Die();
+
+	void MonoBehavior(void);
 };
 

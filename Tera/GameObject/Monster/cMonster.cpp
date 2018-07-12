@@ -9,6 +9,9 @@ cMonster::cMonster()
 	, m_fSpeed(1.0f)
 	, m_vBeforeAnimPos(0, 0, 0)
 	, m_vCurAnimPos(0, 0, 0)
+	, m_bIsGen(true)
+	, m_bAwake(false)
+	, m_vBehaviorSpot(0, 0, 0)
 {
 	D3DXMatrixIdentity(&m_matWorld);
 	D3DXMatrixIdentity(&m_matAnimWorld);

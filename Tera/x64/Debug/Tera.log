@@ -1,19 +1,27 @@
-﻿cBoundingBox.obj : error LNK2019: D3DXVec3Normalize 외부 기호(참조 위치: "public: struct ST_OBB __cdecl cBoundingBox::GetOBB(void)" (?GetOBB@cBoundingBox@@QEAA?AUST_OBB@@XZ) 함수)에서 확인하지 못했습니다.
+﻿  cTestMap.cpp
+c:\users\user\source\repos\tera\tera\ctestmap.cpp(73): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  iMap.cpp
+  Tera.cpp
+  코드를 생성하고 있습니다...
+cBoundingBox.obj : error LNK2019: D3DXVec3Normalize 외부 기호(참조 위치: "public: struct ST_OBB __cdecl cBoundingBox::GetOBB(void)" (?GetOBB@cBoundingBox@@QEAA?AUST_OBB@@XZ) 함수)에서 확인하지 못했습니다.
 cCamera.obj : error LNK2001: D3DXVec3Normalize 외부 기호를 확인할 수 없습니다.
 cMonster01.obj : error LNK2001: D3DXVec3Normalize 외부 기호를 확인할 수 없습니다.
 cMainGame.obj : error LNK2001: D3DXVec3Normalize 외부 기호를 확인할 수 없습니다.
 cBoundingBox.obj : error LNK2019: D3DXVec3TransformCoord 외부 기호(참조 위치: "public: struct ST_OBB __cdecl cBoundingBox::GetOBB(void)" (?GetOBB@cBoundingBox@@QEAA?AUST_OBB@@XZ) 함수)에서 확인하지 못했습니다.
 cCamera.obj : error LNK2001: D3DXVec3TransformCoord 외부 기호를 확인할 수 없습니다.
+cTestMap.obj : error LNK2001: D3DXVec3TransformCoord 외부 기호를 확인할 수 없습니다.
 cObjectManager.obj : error LNK2001: D3DXVec3TransformCoord 외부 기호를 확인할 수 없습니다.
-cCamera.obj : error LNK2019: D3DXMatrixTranslation 외부 기호(참조 위치: "public: void __cdecl cCamera::Update(struct D3DXVECTOR3)" (?Update@cCamera@@QEAAXUD3DXVECTOR3@@@Z) 함수)에서 확인하지 못했습니다.
+cCharacterClass03.obj : error LNK2001: D3DXMatrixTranslation 외부 기호를 확인할 수 없습니다.
+cCamera.obj : error LNK2001: D3DXMatrixTranslation 외부 기호를 확인할 수 없습니다.
+cTestMap.obj : error LNK2001: D3DXMatrixTranslation 외부 기호를 확인할 수 없습니다.
 cMonster01.obj : error LNK2001: D3DXMatrixTranslation 외부 기호를 확인할 수 없습니다.
 cDummyObj.obj : error LNK2001: D3DXMatrixTranslation 외부 기호를 확인할 수 없습니다.
-cCharacterClass03.obj : error LNK2001: D3DXMatrixTranslation 외부 기호를 확인할 수 없습니다.
 cCamera.obj : error LNK2019: D3DXMatrixRotationY 외부 기호(참조 위치: "public: void __cdecl cCamera::Update(struct D3DXVECTOR3)" (?Update@cCamera@@QEAAXUD3DXVECTOR3@@@Z) 함수)에서 확인하지 못했습니다.
 cMonster01.obj : error LNK2001: D3DXMatrixRotationY 외부 기호를 확인할 수 없습니다.
 cCharacterClass03.obj : error LNK2001: D3DXMatrixRotationY 외부 기호를 확인할 수 없습니다.
 cCamera.obj : error LNK2019: D3DXMatrixLookAtLH 외부 기호(참조 위치: "public: void __cdecl cCamera::Update(struct D3DXVECTOR3)" (?Update@cCamera@@QEAAXUD3DXVECTOR3@@@Z) 함수)에서 확인하지 못했습니다.
 cCamera.obj : error LNK2019: D3DXMatrixPerspectiveFovLH 외부 기호(참조 위치: "public: void __cdecl cCamera::Setup(void)" (?Setup@cCamera@@QEAAXXZ) 함수)에서 확인하지 못했습니다.
+cTestMap.obj : error LNK2019: D3DXIntersectTri 외부 기호(참조 위치: "public: virtual bool __cdecl cTestMap::GetHeight(float,float &,float)" (?GetHeight@cTestMap@@UEAA_NMAEAMM@Z) 함수)에서 확인하지 못했습니다.
 cMonster01.obj : error LNK2019: D3DXVec3TransformNormal 외부 기호(참조 위치: "public: void __cdecl cMonster01::SetAnimWorld(void)" (?SetAnimWorld@cMonster01@@QEAAXXZ) 함수)에서 확인하지 못했습니다.
 cCharacterClass03.obj : error LNK2001: D3DXVec3TransformNormal 외부 기호를 확인할 수 없습니다.
 cMonster01.obj : error LNK2019: D3DXMatrixMultiply 외부 기호(참조 위치: "public: struct D3DXMATRIX __cdecl D3DXMATRIX::operator*(struct D3DXMATRIX const &)const " (??DD3DXMATRIX@@QEBA?AU0@AEBU0@@Z) 함수)에서 확인하지 못했습니다.
@@ -48,4 +56,4 @@ cMainGame.obj : error LNK2019: D3DXCreateTextureFromFileW 외부 기호(참조 �
 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86\d3d9.lib : warning LNK4272: 'x86' 라이브러리 컴퓨터 종류가 'x64' 대상 컴퓨터 종류와 충돌합니다.
 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86\d3dx9.lib : warning LNK4272: 'x86' 라이브러리 컴퓨터 종류가 'x64' 대상 컴퓨터 종류와 충돌합니다.
 lib\fmodex_vc.lib : warning LNK4272: 'x86' 라이브러리 컴퓨터 종류가 'x64' 대상 컴퓨터 종류와 충돌합니다.
-C:\Users\user\source\repos\Tera\x64\Debug\Tera.exe : fatal error LNK1120: 32개의 확인할 수 없는 외부 참조입니다.
+C:\Users\user\source\repos\Tera\x64\Debug\Tera.exe : fatal error LNK1120: 33개의 확인할 수 없는 외부 참조입니다.
